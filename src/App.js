@@ -11,6 +11,7 @@ import PlayerPage from "./PlayerAnalyzer/PlayerPage";
 import Test from "./Test";
 
 const data = { pageTitle: "Game Run Page" };
+const message = "This is the second update";
 
 function App() {
   return (
