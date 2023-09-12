@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+html {
+  padding: 2rem;
+}
+
+/* Navbar */
+.pe-navbar {
+  border-radius: 20px;
+}
+
+.pe-nav-brand {
+  padding: 2rem;
+}
+
+.re-nav-link {
+  text-decoration: none;
+}
