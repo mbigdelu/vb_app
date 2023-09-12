@@ -1,5 +1,3 @@
-//  this is the Second updated version now
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -11,7 +9,6 @@ import PlayerPage from "./PlayerAnalyzer/PlayerPage";
 import Test from "./Test";
 
 const data = { pageTitle: "Game Run Page" };
-const message = "This is the second update";
 
 function App() {
   return (
