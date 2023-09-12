@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import chartLabel from "react-vis/dist/plot/chart-label";
+
 import {
   LineChart,
   Line,
