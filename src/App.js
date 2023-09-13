@@ -7,19 +7,30 @@ import Login from "./Pages/Login";
 import NewGame from "./Pages/NewGame";
 import PlayerPage from "./PlayerAnalyzer/PlayerPage";
 import Test from "./Test";
-
-//  this is my update
+import HomePage from "./HomePage";
 
 const data = { pageTitle: "Game Run Page" };
 
 function App() {
   return (
     <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login message={"Login Page"} />} />
+        <Route
+          path="/new-game/*"
+          element={<NewGame title={data.pageTitle} />}
+        />
+        <Route path="/player-analyze/*" element={<PlayerPage />} />
+        <Route path="/test" element={<Test />} />
+      </Routes>
       <div class="pe-navbar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
-            <NavLink class="re-nav-link">
-              <a class="navbar-brand pe-nav-brand">VB App</a>
+            <NavLink class="re-nav-link" to="/">
+              <a class="navbar-brand pe-nav-brand" href="#">
+                VB App
+              </a>
             </NavLink>
             <button
               class="navbar-toggler"
@@ -35,7 +46,7 @@ function App() {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <NavLink className="re-nav-link" to="/run-game">
+                  <NavLink className="re-nav-link" to="/">
                     <a class="nav-link active" aria-current="page" href="#">
                       Home
                     </a>
@@ -84,7 +95,9 @@ function App() {
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
+                  <a class="nav-link disabled" href="#">
+                    Disabled
+                  </a>
                 </li>
               </ul>
               <form class="d-flex" role="search">
@@ -102,16 +115,6 @@ function App() {
           </div>
         </nav>
       </div>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login message={"Login Page"} />} />
-        <Route
-          path="/new-game/*"
-          element={<NewGame title={data.pageTitle} />}
-        />
-        <Route path="/player-analyze/*" element={<PlayerPage />} />
-        <Route path="/test" element={<Test />} />
-      </Routes>
     </div>
   );
 }
