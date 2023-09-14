@@ -14,16 +14,6 @@ const data = { pageTitle: "Game Run Page" };
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login message={"Login Page"} />} />
-        <Route
-          path="/new-game/*"
-          element={<NewGame title={data.pageTitle} />}
-        />
-        <Route path="/player-analyze/*" element={<PlayerPage />} />
-        <Route path="/test" element={<Test />} />
-      </Routes>
       <div class="pe-navbar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
@@ -115,6 +105,16 @@ function App() {
           </div>
         </nav>
       </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login message={"Login Page"} />} />
+        <Route
+          path="/new-game/*"
+          element={<NewGame title={data.pageTitle} />}
+        />
+        <Route path="/player-analyze/*" element={<PlayerPage />} />
+        <Route path="/test" element={<Test />} />
+      </Routes>
     </div>
   );
 }
