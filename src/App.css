@@ -53,3 +53,11 @@ html {
 .re-nav-link {
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .btn-group[name="actsRadioGroup"] .btn,
+  .btn-group[name="playersRadioGroup"] .btn {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}

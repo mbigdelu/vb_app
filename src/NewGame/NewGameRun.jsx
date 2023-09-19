@@ -242,7 +242,7 @@ function NewGameRun(props) {
             <h3>Who got the point?</h3>
           </div>
           <div
-            class="btn-group mt-3"
+            class="btn-group  mt-3"
             role="players"
             aria-label="Basic radio toggle button group"
             name="playersRadioGroup"

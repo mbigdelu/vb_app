@@ -24,8 +24,8 @@ export default function PlayerPage() {
   console.log(state.playerData);
 
   return (
-    <div className="container">
-      <div class="container mt-5 pt-3 mx-5 px-5">
+    <div className="container container-sm">
+      <div class="container mt-5 pt-3  px-5">
         <div class="row ">
           <div class="col-md-6 mb-0">
             <div>
@@ -43,7 +43,7 @@ export default function PlayerPage() {
               />
             </div>
           </div>
-          <div class="col-md-6 ">
+          <div class="col-md-6">
             <div>
               <TableGenerator data={tableDataGenerator(state.playerData)} />
             </div>
