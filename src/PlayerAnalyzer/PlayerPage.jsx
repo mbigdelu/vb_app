@@ -11,7 +11,6 @@ import PlayersChartSection from "./PlayersChartSection";
 import image from "../Images/image.jpg";
 import TableGenerator from "./PlayerTableGenerator";
 import PlayerSearch from "./PlayerSearch";
-import { connected } from "process";
 import PlayersExtraInfoTableGenerator from "./PlayersExtraInfoTableGenerator.jsx";
 
 export default function PlayerPage() {
