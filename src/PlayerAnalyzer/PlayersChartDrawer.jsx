@@ -16,24 +16,29 @@ function PlayersChartDrawer(props) {
 
   const chartData = state.chartData;
 
+  const [sizes, setSizes] = useState({ width: 500, height: 300 });
+
+  useEffect(() => {
+    if (window.innerWidth > 534) {
+      setSizes({ width: 500, height: 300 });
+    }
+    if (window.innerWidth < 534) {
+      setSizes({ width: 400, height: 240 });
+    }
+
+    if (window.innerWidth < 434) {
+      setSizes({ width: 300, height: 180 });
+    }
+  }, [window.innerWidth]);
+
   useEffect(() => {
     setState(props.data);
   }, [props.data]);
 
   return (
-    <LineChart
-      width={500}
-      height={300}
-      data={chartData}
-      margin={{
-        top: 5,
-        right: 10,
-        left: 10,
-        bottom: 5,
-      }}
-    >
+    <LineChart width={sizes.width} height={sizes.height} data={chartData}>
       <XAxis dataKey="date" />
-      <YAxis domain={[0, 100]} />
+      {/* <YAxis domain={[0, 100]} /> */}
       <Tooltip />
       <Legend />
       {state.spikeLine &&

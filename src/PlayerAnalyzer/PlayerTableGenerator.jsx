@@ -3,10 +3,10 @@ import { useState } from "react";
 function TableGenerator(props) {
   const [tableData, setTableData] = useState({ tableArray: props.data });
 
-  console.log(tableData);
-
   return (
-    <table class="table table-primary table-striped ">
+    <table
+      class={`table mb-3 table-striped  table-borderless  ${props.bgColorClass}`}
+    >
       <tbody>
         {tableData.tableArray.map((row) => {
           return (

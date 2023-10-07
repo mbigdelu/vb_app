@@ -18,8 +18,8 @@ function PlayersChartSection(props) {
   }
 
   return (
-    <div className="container">
-      <div className="row justify-content-md-center p-4 m-3">
+    <div className="">
+      <div className="row justify-content-md-center py-4 my-3">
         <div className="col-">
           <div
             class="btn-group"
@@ -73,7 +73,7 @@ function PlayersChartSection(props) {
           </div>
         </div>
       </div>
-      <div className="row justify-content-md-center p-4 m-3">
+      <div className="row justify-content-md-center ">
         <div className="col-md-auto">
           <PlayersChartDrawer data={chartData} />
         </div>
