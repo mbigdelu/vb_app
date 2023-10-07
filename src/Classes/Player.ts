@@ -1,4 +1,8 @@
+const { v4: uuidv4 } = require("uuid");
+
 export default class Player {
+  private _id: string;
+
   name: String;
   number: number;
   age: number;
@@ -13,6 +17,14 @@ export default class Player {
   highestReach: number;
   blockJump: number;
   spikeJump: number;
+
+  currentGameTotalNumberOfSpikes: number;
+  currentGameTotalNumberOfBlocks: number;
+  currentGameTotalNumberOfAceServes: number;
+  currentGameTotalNumberOfErrors: number;
+  currentGameTotalNumberOfPoints: number;
+  currentGameOverallNumberOfPoints: number;
+  currentGameTotalNumberOfTips: number;
 
   private numberOfAceServes: number;
   private numberOfAttemptToBlocks: number;
@@ -42,6 +54,15 @@ export default class Player {
   constructor(name, number) {
     this.name = name;
     this.number = number;
+    // this._id = uuidv4();
+
+    this.currentGameTotalNumberOfSpikes = 0;
+    this.currentGameTotalNumberOfBlocks = 0;
+    this.currentGameTotalNumberOfTips = 0;
+    this.currentGameTotalNumberOfAceServes = 0;
+    this.currentGameTotalNumberOfErrors = 0;
+    this.currentGameTotalNumberOfPoints = 0;
+    this.currentGameOverallNumberOfPoints = 0;
   }
 
   updateData(path: string, value: any) {
@@ -52,5 +73,15 @@ export default class Player {
     const currentState = { ...this };
     const timestamp = new Date();
     this.playerHistory.push({ state: currentState, timestamp });
+  }
+
+  toJSON() {
+    return {
+      ...this,
+      playerHistory: this.playerHistory.map((entry) => ({
+        state: { ...entry.state },
+        timestamp: entry.timestamp,
+      })),
+    };
   }
 }

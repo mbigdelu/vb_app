@@ -1,3 +1,29 @@
+html {
+  --primary-color: #fdf7ff;
+  --secondary-color: rgba(64, 37, 132, 1);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(99, 55, 212);
+  background: linear-gradient(
+    127deg,
+    rgba(99, 55, 212, 1) 0%,
+    rgba(64, 37, 132, 1) 80%,
+    rgba(137, 76, 255, 1) 90%,
+    rgba(35, 21, 72, 1) 100%
+  );
+}
+
+table tr td,
+table tr th {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +31,49 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.player_image {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.form-control-no-outline:focus {
+  outline: none !important;
+  box-shadow: none !important; /* Optional, removes the box shadow */
+}
+
+/* Custom coloring */
+
+.link {
+  text-decoration: none !important;
+}
+
+.bg-prim {
+  background-color: var(--primary-color) !important;
+}
+.bg-second {
+  background-color: var(--secondary-color);
+}
+
+.text-prim {
+  color: var(--primary-color) !important;
+}
+.inside-shadow {
+  -webkit-box-shadow: inset 31px 10px 76px -46px rgba(64, 37, 132, 1);
+  -moz-box-shadow: inset 31px 10px 76px -46px rgba(64, 37, 132, 1);
+  box-shadow: inset 31px 10px 76px -46px rgba(64, 37, 132, 1);
+}
+
+.re-invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.re-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,10 +107,32 @@
 }
 
 html {
-  padding: 2rem;
 }
 
+.search-box {
+  max-width: 500px !important;
+}
+
+.search-auto-complete {
+  /* border-radius: 0 !important; */
+}
+
+.search-auto-complete-box {
+  display: block;
+}
 /* Navbar */
+
+.navbar-brand {
+  color: #fdf7ff !important;
+}
+
+.bg-transparent {
+  background: transparent !important;
+  transition: background 0.3s ease, height 0.3s ease;
+}
+
+/* Initial transparent navbar styles */
+
 .pe-navbar {
   border-radius: 20px;
 }
@@ -54,10 +145,94 @@ html {
   text-decoration: none;
 }
 
+.bg-image {
+  background-image: url("./Images/bgImage.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+.mask {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 768px) {
   .btn-group[name="actsRadioGroup"] .btn,
   .btn-group[name="playersRadioGroup"] .btn {
     font-size: 14px;
     padding: 5px 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-scroll {
+    background-color: #fff;
+  }
+
+  .navbar-scroll .navbar-brand,
+  .navbar-scroll .nav-link,
+  .navbar-scroll .fa-bars {
+    color: #4f4f4f !important;
+  }
+}
+
+.navbar-brand {
+  letter-spacing: 3px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.navbar-scroll .navbar-brand,
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars {
+  color: #fff;
+}
+
+.navbar-scroll {
+  box-shadow: none;
+}
+
+.navbar-scrolled {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+  color: #4f4f4f;
+}
+
+.navbar-scrolled {
+  background-color: #fff;
+}
+
+.player-table-row {
+  cursor: pointer !important;
+}
+
+@media (max-width: 450px) {
+  #intro {
+    height: 950px !important;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 750px) {
+  #intro {
+    height: 1100px !important;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 990px) {
+  #intro {
+    height: 600px !important;
+  }
+}
+
+.display-1 {
+  font-weight: 500 !important;
+  letter-spacing: 40px;
+}
+
+@media (min-width: 1600px) {
+  .display-1 {
+    font-size: 10rem;
   }
 }

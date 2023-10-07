@@ -1,6 +1,10 @@
 import Player from "./Player";
 
-class Teams {
+const { v4: uuidv4 } = require("uuid");
+
+export default class Team {
+  private _id: string;
+
   name: string;
   coachName: string;
   Players: Array<typeof Player>;
@@ -8,11 +12,10 @@ class Teams {
   private numberOfTotalPoints: number;
   private numberOfTotalErrors: number;
 
-  constructor(name, coachName, Players) {
+  constructor(name, Players) {
+    this._id = uuidv4();
     this.name = name;
-    this.coachName = coachName;
     this.Players = Players;
+    this.coachName = "coach";
   }
 }
-
-export default Teams;
