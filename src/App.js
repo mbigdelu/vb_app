@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./custom.scss";
-import "@testing-library/jest-dom";
 
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./Pages/NotFound";
