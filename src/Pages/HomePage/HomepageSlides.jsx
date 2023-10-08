@@ -6,7 +6,7 @@ export default function HomePageSlides(props) {
   return (
     <div
       id="carouselExampleCaptions"
-      class="carousel slide "
+      className="carousel slide bg-dark rounded-5 shadow"
       data-bs-ride="false"
     >
       <div class="carousel-indicators">
@@ -33,26 +33,38 @@ export default function HomePageSlides(props) {
       </div>
       <div class="carousel-inner rounded-3">
         <div class="carousel-item active">
-          <img src={slide1} class="d-block w-100" alt="..." />
+          <img src={slide1} className="d-block w-100 border-0" alt="..." />
 
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5>Player Profiling</h5>
+            <p>
+              Get to know your favorite volleyball players inside and out with
+              our player profiling feature, which includes individual stats,
+              strengths, and weaknesses
+            </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src={slide2} class="d-block w-100" alt="slides#1" />
+          <img src={slide2} class="d-block w-100 border-0" alt="slides#1" />
 
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h5>Team Insights</h5>
+            <p>
+              Uncover the strategies and tactics used by top volleyball teams as
+              we break down their gameplay, formations, and winning strategies
+              for you.
+            </p>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src={slide3} class="d-block w-100 bg-opacity-10" alt="..." />
+        <div class="carousel-item bg-dark">
+          <img src={slide3} class="d-block w-100 border-0 bg-dark" alt="..." />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5>Game Statistics</h5>
+            <p>
+              Explore detailed statistics for volleyball games, including
+              scores, player performance, and team dynamics, to gain insights
+              into every match.
+            </p>
           </div>
         </div>
       </div>

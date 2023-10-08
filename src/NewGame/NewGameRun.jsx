@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Game from "../Classes/Game.ts";
-import Alert from "react-bootstrap/Alert";
-import { Toast } from "bootstrap";
-import ToastMaker from "../Functions/ToastMaker.jsx";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import Tooltip from "react-bootstrap/Tooltip";
+import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 function NewGameRun(props) {
   const [gameData, setGameData] = useState({
@@ -76,7 +77,43 @@ function NewGameRun(props) {
     return tempGameData;
   }
 
-  useEffect(() => {}, [gameData]);
+  useEffect(() => {
+    document.addEventListener("keypress", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  }, [handleKeyPress]);
+
+  function handleKeyPress(event) {
+    let tempGameData = { ...gameData };
+
+    switch (event.key) {
+      case "a" || "A":
+        tempGameData.selectedAct = "Spike";
+        break;
+      case "s" || "S":
+        tempGameData.selectedAct = "Serve";
+        break;
+      case "d" || "D":
+        tempGameData.selectedAct = "Block";
+        break;
+      case "f" || "F":
+        tempGameData.selectedAct = "Error";
+        break;
+      case "g" || "G":
+        tempGameData.selectedAct = "Tip";
+        break;
+      case "g" || "G":
+        tempGameData.selectedAct = "Tip";
+        break;
+
+      default:
+        break;
+    }
+
+    setGameData(tempGameData);
+  }
 
   function handleUpdateGameDataPoints(data) {
     let tempGameData = { ...data };
@@ -529,7 +566,24 @@ function NewGameRun(props) {
         hidden={gameData.isGameDone}
       >
         <div className="container mt-5 p-5  rounded-5 inside-shadow  bg-prim ">
-          <h1 className="">MATCH</h1>
+          <div className="d-flex justify-content-between">
+            <OverlayTrigger
+              placement="right"
+              delay={{ show: 250, hide: 400 }}
+              overlay={
+                <Tooltip id="button-tooltip" {...props}>
+                  You can switch between acts using keys a, s, d, f, and g
+                </Tooltip>
+              }
+            >
+              <Button variant="invisible">
+                <AiOutlineInfoCircle size={25} className="ms-3" />
+              </Button>
+            </OverlayTrigger>
+
+            <h1 className="r">MATCH</h1>
+            <AiOutlineInfoCircle size={25} className="invisible me-3" />
+          </div>
 
           <div className="container">
             <div className="row justify-content-center"></div>

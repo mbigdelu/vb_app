@@ -59,10 +59,6 @@ function CustomNavbar(props) {
               Home
             </Nav.Link>
 
-            <Nav.Link href="/about" className={linkClassGenerator()}>
-              About
-            </Nav.Link>
-
             <Nav.Link href="/new-game/setup" className={linkClassGenerator()}>
               Game Analyze
             </Nav.Link>
@@ -74,6 +70,9 @@ function CustomNavbar(props) {
             <LinkContainer to="/test" className={linkClassGenerator()}>
               <Nav.Link>Test</Nav.Link>
             </LinkContainer>
+            <Nav.Link href="/about" className={linkClassGenerator()}>
+              About
+            </Nav.Link>
             <LinkContainer to="/contact" className={linkClassGenerator()}>
               <Nav.Link>Contact</Nav.Link>
             </LinkContainer>

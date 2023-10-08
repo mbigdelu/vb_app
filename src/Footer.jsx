@@ -29,7 +29,7 @@ export default function Footer(props) {
               <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 className="text-uppercase mb-4 font-weight-bold">Usages</h6>
 
-                <Link to="/" className="nav-link pb-2 " href="#">
+                <Link to="/new-game/setup" className="nav-link pb-2 ">
                   Game Analyze
                 </Link>
 
@@ -37,7 +37,7 @@ export default function Footer(props) {
                   Team Analyze
                 </Link>
 
-                <Link to="/" className="nav-link py-2">
+                <Link to="/player-analyze" className="nav-link py-2">
                   Player Analyze
                 </Link>
 
@@ -74,46 +74,36 @@ export default function Footer(props) {
                 </h6>
 
                 <a
-                  className="btn btn-primary rounded-circle btn-floating m-1"
+                  className="btn btn-primary   m-1"
                   href="https://github.com/mbigdelu"
                   target="_blank"
                   role="button"
                 >
                   <AiFillGithub />
                 </a>
+
                 <a
-                  className="btn btn-primary rounded-circle btn-floating m-1"
-                  href="#!"
+                  className="btn btn-primary  m-1"
+                  href="https://www.linkedin.com/in/mohammad-bigdelu-6a232b222/"
+                  target="_blank"
                   role="button"
                 >
                   <AiFillLinkedin />
                 </a>
-                <a
-                  className="btn btn-primary rounded-circle btn-floating m-1"
-                  href="#!"
-                  role="button"
-                >
+                <a className="btn btn-primary  m-1" href="#!" role="button">
                   <AiOutlineLink />
                 </a>
                 <a
-                  className="btn btn-primary rounded-circle btn-floating m-1"
-                  href="#!"
+                  className="btn btn-primary  m-1"
+                  href="mailto:si.bigdelu@gmail.com"
                   role="button"
                 >
                   <BiLogoGmail />
                 </a>
-                <a
-                  className="btn btn-primary rounded-circle btn-floating m-1"
-                  href="#!"
-                  role="button"
-                >
+                <a className="btn btn-primary  m-1" href="#!" role="button">
                   <BsInstagram />
                 </a>
-                <a
-                  className="btn btn-primary rounded-circle btn-floating m-1"
-                  href="#!"
-                  role="button"
-                >
+                <a className="btn btn-primary  m-1" href="#!" role="button">
                   <BsWhatsapp />
                 </a>
               </div>
@@ -123,7 +113,15 @@ export default function Footer(props) {
 
         <div className="text-center p-3">
           © 2023 Copyright:
-          <Link className="text-decoration-none"> Mohammad Bigdelu</Link>
+          <a
+            href="https://github.com/mbigdelu"
+            target="_blank"
+            role="button"
+            className="text-decoration-none"
+          >
+            {" "}
+            Mohammad Bigdelu
+          </a>
         </div>
       </footer>
     </div>
