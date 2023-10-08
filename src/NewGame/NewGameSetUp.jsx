@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "../CSS/NewGameSetUp.css";
 import { Link } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
 
 import ToastMaker from "../Functions/ToastMaker";
 
@@ -125,6 +126,16 @@ function NewGameSetUp(props) {
       default:
         break;
     }
+
+    setFormData(tempFormData);
+  }
+
+  function handlePlayerDeleteClick(player, teamPath) {
+    let tempFormData = { ...formData };
+
+    const index = tempFormData[teamPath].players.indexOf(player);
+
+    tempFormData[teamPath].players.splice(index, 1);
 
     setFormData(tempFormData);
   }
@@ -307,7 +318,10 @@ function NewGameSetUp(props) {
               </button>
             </div>
             <div className="row mt-5 pt-3">
-              {PlayersNameListGenerator(formData.firstTeamInfo.players)}
+              {PlayersNameListGenerator(
+                formData.firstTeamInfo.players,
+                "firstTeamInfo"
+              )}
             </div>
           </div>
           {/* Second Team Info */}
@@ -361,7 +375,10 @@ function NewGameSetUp(props) {
               </button>
             </div>
             <div className="row mt-5 pt-3 ">
-              {PlayersNameListGenerator(formData.secondTeamInfo.players)}
+              {PlayersNameListGenerator(
+                formData.secondTeamInfo.players,
+                "secondTeamInfo"
+              )}
             </div>
           </div>
         </div>
@@ -388,30 +405,42 @@ function NewGameSetUp(props) {
       </div>
     </div>
   );
-}
 
-function PlayersNameListGenerator(playersList) {
-  let jsx = [];
+  function PlayersNameListGenerator(playersList, teamPath) {
+    let jsx = [];
 
-  for (let i = 0; i < 6; i++) {
-    if (playersList[i]) {
-      jsx.push(
-        <p className="visible ">
-          {playersList[i].name}
-          <span class=" ms-5 badge bg-secondary rounded-pill ">
-            {playersList[i].number}
-          </span>
-        </p>
-      );
-    } else {
-      jsx.push(
-        <p className="invisible ">
-          .<span class=" ms-5 badge bg-secondary rounded-pill ">.</span>
-        </p>
-      );
+    for (let i = 0; i < 6; i++) {
+      if (playersList[i]) {
+        jsx.push(
+          <div className="d-flex justify-content-between">
+            <div className="">
+              <p className="visible ">
+                {playersList[i].name}
+                <span class=" ms-5 badge bg-info rounded-pill ">
+                  {playersList[i].number}
+                </span>
+              </p>
+            </div>
+            <div className="">
+              <AiOutlineClose
+                cursor="pointer"
+                onClick={() =>
+                  handlePlayerDeleteClick(playersList[i], teamPath)
+                }
+              />
+            </div>
+          </div>
+        );
+      } else {
+        jsx.push(
+          <p className="invisible ">
+            .<span class=" ms-5 badge bg-secondary rounded-pill ">.</span>
+          </p>
+        );
+      }
     }
+    return jsx;
   }
-  return jsx;
 }
 
 export default NewGameSetUp;

@@ -5,6 +5,7 @@ import { BiSolidDownArrow, BiDownArrow } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { FiFilter } from "react-icons/fi";
 
 export default function Player(props) {
   const [playersList, setPlayersList] = useState(getPlayersList());
@@ -145,23 +146,20 @@ export default function Player(props) {
         id="players-table"
       >
         <div className="row mb-4">
-          <div className="col d-flex">
-            <Button
-              variant="primary"
-              onClick={handleShowFilters}
-              className="me-2"
-            >
-              Filters
-            </Button>
-          </div>
-          <div className="col d-flex justify-content-end">
-            <Button variant="primary">Add</Button>
-          </div>
+          <div className="col d-flex"></div>
+          <div className="col d-flex justify-content-end"></div>
         </div>
         <table class="table table-hover ">
           <thead>
             <tr>
               <th className="text-start" scope="col">
+                <Button
+                  variant="primary bg-transparent border-0"
+                  onClick={handleShowFilters}
+                  className="me-2"
+                >
+                  <FiFilter className="text-primary" />
+                </Button>
                 Name {columnIconGenerator("name")}
               </th>
               <th scope="col">
